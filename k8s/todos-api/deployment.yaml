@@ -19,17 +19,16 @@ spec:
         - name: TODO_API_PORT
           value: "8082"
         - name: REDIS_HOST
-          value: redis-queue
+          value: redis-cluster
         - name: REDIS_PORT
           value: "6379"
         - name: REDIS_CHANNEL
           value: log_channel
         - name: ZIPKIN_URL
           value: http://zipkin:9411/api/v2/spans
-          
-        image: todos-api
+        image: thecloudgarage/polyglot-todos:todos-api
         name: todos-api
         ports:
         - containerPort: 8082
-        imagePullPolicy: Never
+        imagePullPolicy: Always
       restartPolicy: Always

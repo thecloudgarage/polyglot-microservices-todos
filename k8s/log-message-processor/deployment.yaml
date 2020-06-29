@@ -5,7 +5,7 @@ metadata:
     app: microservice-app-example
   name: log-message-processor
 spec:
-  replicas: 1
+  replicas: 6
   template:
     metadata:
       labels:
@@ -22,8 +22,7 @@ spec:
           value: log_channel
         - name: ZIPKIN_URL
           value: http://zipkin:9411/api/v1/spans
-          
-        image: log-message-processor
+        image: thecloudgarage/polyglot-todos:log-message-processor
         name: log-message-processor
-        imagePullPolicy: Never
+        imagePullPolicy: Always
       restartPolicy: Always
