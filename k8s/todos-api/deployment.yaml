@@ -5,7 +5,7 @@ metadata:
     app: microservice-app-example
   name: todos-api
 spec:
-  replicas: 1
+  replicas: 6
   template:
     metadata:
       labels:

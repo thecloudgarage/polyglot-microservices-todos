@@ -4,9 +4,14 @@ metadata:
   labels:
     app: microservice-app-example
   name: frontend
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: "nlb"
 spec:
   ports:
   - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    name: frontend
   selector:
     service: frontend
   type: LoadBalancer
